@@ -1,8 +1,8 @@
-# MonoCalibration
+# StereoCalibration
 
 ## Synopsis
 
-Monocular Camera Calibration : Compute intrinsic parameters of a camera using chessboard calibration images.
+Stereo Camera Calibration : Estimate transformation between two cameras making a stereo pair.
 
 ## Motivation
 
@@ -24,7 +24,7 @@ Right-click on Visual Studio project and go to properties:
 
 ## Testing
 
-To TEST the utility, you can check out "MonoCalibration.cpp" which provides step-by-step instructions. 
+To TEST the utility, you can check out "StereoCalibration.cpp" which provides step-by-step instructions. 
 I have also included sample chessboard calibration images in the "Images" Folder.
 
 ## License
