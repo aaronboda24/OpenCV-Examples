@@ -1,5 +1,5 @@
 // StereoCalibration.cpp : This file contains the 'main' function. Program execution begins and ends there.
-// Shows how to use calibrate stereo camera, given chessboard calibration images.
+// Shows how to calibrate stereo camera given chessboard calibration stereo image pairs.
 // Prepared by Aaron Boda
 
 #include "pch.h"
