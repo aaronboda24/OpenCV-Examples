@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-Compute intrinsic parameters of a camera using chessboard calibration images.
+Monocular Camera Calibration : Compute intrinsic parameters of a camera using chessboard calibration images.
 
 ## Motivation
 
