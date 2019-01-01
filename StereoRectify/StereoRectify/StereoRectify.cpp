@@ -38,18 +38,15 @@ int main()
 
 	// *** Perform Stereo Rectification
 
-	// Initialize Rectifier Object
-	Rectifier REC;
-
 	// Initialize variables
 	Mat R_L, R_R, P_L, P_R, Q, K_L_NEW, K_R_NEW, MAPx_L, MAPx_R, MAPy_L, MAPy_R, IMG_L, IMG_R, IMG_L_NEW, IMG_R_NEW;
 
 	// Compute rectification transforms
-	REC.StereoRectification(K_L, D_L, K_R, D_R, R, T, R_L, R_R, P_L, P_R, Q, img_size);
+	StereoRectification(K_L, D_L, K_R, D_R, R, T, R_L, R_R, P_L, P_R, Q, img_size);
 
 	// Compute undistortion and rectification maps for left and right
-	REC.UndistortRectifyMap(K_L, D_L, R_L, K_L_NEW, MAPx_L, MAPy_L, img_size);
-	REC.UndistortRectifyMap(K_R, D_R, R_R, K_R_NEW, MAPx_R, MAPy_R, img_size);
+	UndistortRectifyMap(K_L, D_L, R_L, K_L_NEW, MAPx_L, MAPy_L, img_size);
+	UndistortRectifyMap(K_R, D_R, R_R, K_R_NEW, MAPx_R, MAPy_R, img_size);
 
 	// Apply geometrical transformation to image
 	string sample_left = cal_img_dir_L + "left1.png";
@@ -57,8 +54,8 @@ int main()
 	IMG_L = imread(sample_left, IMREAD_GRAYSCALE);
 	IMG_R = imread(sample_right, IMREAD_GRAYSCALE);
 
-	REC.Remapper(IMG_L, IMG_L_NEW, MAPx_L, MAPy_L);
-	REC.Remapper(IMG_R, IMG_R_NEW, MAPx_R, MAPy_R);
+	Remapper(IMG_L, IMG_L_NEW, MAPx_L, MAPy_L);
+	Remapper(IMG_R, IMG_R_NEW, MAPx_R, MAPy_R);
 
 	string img_out_L = "Output/RectifiedLeft.png";
 	string img_out_R = "Output/RectifiedRight.png";
